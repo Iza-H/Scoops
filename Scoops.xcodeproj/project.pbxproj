@@ -1,0 +1,343 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FDA2C8F11C8A49B600A62611 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA2C8F01C8A49B600A62611 /* NewViewController.swift */; };
+		FDA2C8F31C8A713100A62611 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA2C8F21C8A713100A62611 /* CoreLocation.framework */; };
+		FDD8E3781C8916F2004A5612 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E3771C8916F2004A5612 /* AppDelegate.swift */; };
+		FDD8E37A1C8916F2004A5612 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E3791C8916F2004A5612 /* ViewController.swift */; };
+		FDD8E37D1C8916F3004A5612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD8E37B1C8916F3004A5612 /* Main.storyboard */; };
+		FDD8E37F1C8916F3004A5612 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDD8E37E1C8916F3004A5612 /* Assets.xcassets */; };
+		FDD8E3821C8916F3004A5612 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD8E3801C8916F3004A5612 /* LaunchScreen.storyboard */; };
+		FDD8E38A1C891B3C004A5612 /* Azure Storage Client Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD8E3891C891B3C004A5612 /* Azure Storage Client Library.framework */; };
+		FDD8E38E1C891B90004A5612 /* AzFake.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E38D1C891B90004A5612 /* AzFake.m */; };
+		FDD8E3901C891BB8004A5612 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD8E38F1C891BB8004A5612 /* libxml2.2.tbd */; };
+		FDD8E3971C891E9A004A5612 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E3961C891E9A004A5612 /* NewsTableViewController.swift */; };
+		FDD8E3991C8A146D004A5612 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E3981C8A146D004A5612 /* Utils.swift */; };
+		FDD8E39D1C8A1FAB004A5612 /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD8E39C1C8A1FAB004A5612 /* WindowsAzureMobileServices.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FDA2C8F01C8A49B600A62611 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		FDA2C8F21C8A713100A62611 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FDD8E3741C8916F2004A5612 /* Scoops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scoops.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FDD8E3771C8916F2004A5612 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FDD8E3791C8916F2004A5612 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FDD8E37C1C8916F3004A5612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FDD8E37E1C8916F3004A5612 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FDD8E3811C8916F3004A5612 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FDD8E3831C8916F3004A5612 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FDD8E3891C891B3C004A5612 /* Azure Storage Client Library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "Azure Storage Client Library.framework"; sourceTree = "<group>"; };
+		FDD8E38B1C891B90004A5612 /* Scoops-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Scoops-Bridging-Header.h"; sourceTree = "<group>"; };
+		FDD8E38C1C891B90004A5612 /* AzFake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AzFake.h; sourceTree = "<group>"; };
+		FDD8E38D1C891B90004A5612 /* AzFake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AzFake.m; sourceTree = "<group>"; };
+		FDD8E38F1C891BB8004A5612 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		FDD8E3961C891E9A004A5612 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewController.swift; path = ../NewsTableViewController.swift; sourceTree = "<group>"; };
+		FDD8E3981C8A146D004A5612 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		FDD8E39C1C8A1FAB004A5612 /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FDD8E3711C8916F2004A5612 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDA2C8F31C8A713100A62611 /* CoreLocation.framework in Frameworks */,
+				FDD8E39D1C8A1FAB004A5612 /* WindowsAzureMobileServices.framework in Frameworks */,
+				FDD8E3901C891BB8004A5612 /* libxml2.2.tbd in Frameworks */,
+				FDD8E38A1C891B3C004A5612 /* Azure Storage Client Library.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FDD8E36B1C8916F2004A5612 = {
+			isa = PBXGroup;
+			children = (
+				FDA2C8F21C8A713100A62611 /* CoreLocation.framework */,
+				FDD8E38F1C891BB8004A5612 /* libxml2.2.tbd */,
+				FDD8E3761C8916F2004A5612 /* Scoops */,
+				FDD8E3751C8916F2004A5612 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FDD8E3751C8916F2004A5612 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FDD8E3741C8916F2004A5612 /* Scoops.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FDD8E3761C8916F2004A5612 /* Scoops */ = {
+			isa = PBXGroup;
+			children = (
+				FDD8E3961C891E9A004A5612 /* NewsTableViewController.swift */,
+				FDD8E3771C8916F2004A5612 /* AppDelegate.swift */,
+				FDD8E3791C8916F2004A5612 /* ViewController.swift */,
+				FDD8E37B1C8916F3004A5612 /* Main.storyboard */,
+				FDD8E3981C8A146D004A5612 /* Utils.swift */,
+				FDD8E37E1C8916F3004A5612 /* Assets.xcassets */,
+				FDD8E3801C8916F3004A5612 /* LaunchScreen.storyboard */,
+				FDD8E3831C8916F3004A5612 /* Info.plist */,
+				FDD8E3891C891B3C004A5612 /* Azure Storage Client Library.framework */,
+				FDD8E38C1C891B90004A5612 /* AzFake.h */,
+				FDD8E38D1C891B90004A5612 /* AzFake.m */,
+				FDD8E38B1C891B90004A5612 /* Scoops-Bridging-Header.h */,
+				FDD8E39C1C8A1FAB004A5612 /* WindowsAzureMobileServices.framework */,
+				FDA2C8F01C8A49B600A62611 /* NewViewController.swift */,
+			);
+			path = Scoops;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FDD8E3731C8916F2004A5612 /* Scoops */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FDD8E3861C8916F3004A5612 /* Build configuration list for PBXNativeTarget "Scoops" */;
+			buildPhases = (
+				FDD8E3701C8916F2004A5612 /* Sources */,
+				FDD8E3711C8916F2004A5612 /* Frameworks */,
+				FDD8E3721C8916F2004A5612 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Scoops;
+			productName = Scoops;
+			productReference = FDD8E3741C8916F2004A5612 /* Scoops.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FDD8E36C1C8916F2004A5612 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Izabela;
+				TargetAttributes = {
+					FDD8E3731C8916F2004A5612 = {
+						CreatedOnToolsVersion = 7.1.1;
+					};
+				};
+			};
+			buildConfigurationList = FDD8E36F1C8916F2004A5612 /* Build configuration list for PBXProject "Scoops" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FDD8E36B1C8916F2004A5612;
+			productRefGroup = FDD8E3751C8916F2004A5612 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FDD8E3731C8916F2004A5612 /* Scoops */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FDD8E3721C8916F2004A5612 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDD8E3821C8916F3004A5612 /* LaunchScreen.storyboard in Resources */,
+				FDD8E37F1C8916F3004A5612 /* Assets.xcassets in Resources */,
+				FDD8E37D1C8916F3004A5612 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FDD8E3701C8916F2004A5612 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FDD8E3991C8A146D004A5612 /* Utils.swift in Sources */,
+				FDD8E3971C891E9A004A5612 /* NewsTableViewController.swift in Sources */,
+				FDD8E37A1C8916F2004A5612 /* ViewController.swift in Sources */,
+				FDA2C8F11C8A49B600A62611 /* NewViewController.swift in Sources */,
+				FDD8E3781C8916F2004A5612 /* AppDelegate.swift in Sources */,
+				FDD8E38E1C891B90004A5612 /* AzFake.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FDD8E37B1C8916F3004A5612 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDD8E37C1C8916F3004A5612 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FDD8E3801C8916F3004A5612 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FDD8E3811C8916F3004A5612 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FDD8E3841C8916F3004A5612 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDD8E3851C8916F3004A5612 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FDD8E3871C8916F3004A5612 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Scoops",
+				);
+				INFOPLIST_FILE = Scoops/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.Scoops;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Scoops/Scoops-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FDD8E3881C8916F3004A5612 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Scoops",
+				);
+				INFOPLIST_FILE = Scoops/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = es.Scoops;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Scoops/Scoops-Bridging-Header.h";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FDD8E36F1C8916F2004A5612 /* Build configuration list for PBXProject "Scoops" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDD8E3841C8916F3004A5612 /* Debug */,
+				FDD8E3851C8916F3004A5612 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FDD8E3861C8916F3004A5612 /* Build configuration list for PBXNativeTarget "Scoops" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FDD8E3871C8916F3004A5612 /* Debug */,
+				FDD8E3881C8916F3004A5612 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FDD8E36C1C8916F2004A5612 /* Project object */;
+}
