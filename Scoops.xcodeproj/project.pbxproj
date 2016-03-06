@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FDA2C8F11C8A49B600A62611 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA2C8F01C8A49B600A62611 /* NewViewController.swift */; };
 		FDA2C8F31C8A713100A62611 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDA2C8F21C8A713100A62611 /* CoreLocation.framework */; };
 		FDA2C8F71C8C85C400A62611 /* img_not_avalaible.png in Resources */ = {isa = PBXBuildFile; fileRef = FDA2C8F61C8C85C400A62611 /* img_not_avalaible.png */; };
 		FDA2C8F91C8C99E800A62611 /* DeatailNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA2C8F81C8C99E800A62611 /* DeatailNewsViewController.swift */; };
 		FDA2C8FB1C8CCED700A62611 /* AllNewsPublishedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA2C8FA1C8CCED700A62611 /* AllNewsPublishedTableViewController.swift */; };
+		FDA2C8FF1C8CD94300A62611 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA2C8FE1C8CD94300A62611 /* NewViewController.swift */; };
 		FDD8E3781C8916F2004A5612 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E3771C8916F2004A5612 /* AppDelegate.swift */; };
 		FDD8E37A1C8916F2004A5612 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E3791C8916F2004A5612 /* ViewController.swift */; };
 		FDD8E37D1C8916F3004A5612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD8E37B1C8916F3004A5612 /* Main.storyboard */; };
@@ -26,11 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		FDA2C8F01C8A49B600A62611 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		FDA2C8F21C8A713100A62611 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		FDA2C8F61C8C85C400A62611 /* img_not_avalaible.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_not_avalaible.png; sourceTree = "<group>"; };
 		FDA2C8F81C8C99E800A62611 /* DeatailNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeatailNewsViewController.swift; sourceTree = "<group>"; };
 		FDA2C8FA1C8CCED700A62611 /* AllNewsPublishedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllNewsPublishedTableViewController.swift; sourceTree = "<group>"; };
+		FDA2C8FE1C8CD94300A62611 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
 		FDD8E3741C8916F2004A5612 /* Scoops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scoops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD8E3771C8916F2004A5612 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD8E3791C8916F2004A5612 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,7 +85,6 @@
 		FDD8E3761C8916F2004A5612 /* Scoops */ = {
 			isa = PBXGroup;
 			children = (
-				FDA2C8F01C8A49B600A62611 /* NewViewController.swift */,
 				FDD8E3961C891E9A004A5612 /* NewsTableViewController.swift */,
 				FDD8E3771C8916F2004A5612 /* AppDelegate.swift */,
 				FDA2C8F81C8C99E800A62611 /* DeatailNewsViewController.swift */,
@@ -101,6 +100,7 @@
 				FDD8E38D1C891B90004A5612 /* AzFake.m */,
 				FDD8E38B1C891B90004A5612 /* Scoops-Bridging-Header.h */,
 				FDD8E39C1C8A1FAB004A5612 /* WindowsAzureMobileServices.framework */,
+				FDA2C8FE1C8CD94300A62611 /* NewViewController.swift */,
 			);
 			path = Scoops;
 			sourceTree = "<group>";
@@ -180,9 +180,9 @@
 				FDA2C8F91C8C99E800A62611 /* DeatailNewsViewController.swift in Sources */,
 				FDA2C8FB1C8CCED700A62611 /* AllNewsPublishedTableViewController.swift in Sources */,
 				FDD8E3991C8A146D004A5612 /* Utils.swift in Sources */,
+				FDA2C8FF1C8CD94300A62611 /* NewViewController.swift in Sources */,
 				FDD8E3971C891E9A004A5612 /* NewsTableViewController.swift in Sources */,
 				FDD8E37A1C8916F2004A5612 /* ViewController.swift in Sources */,
-				FDA2C8F11C8A49B600A62611 /* NewViewController.swift in Sources */,
 				FDD8E3781C8916F2004A5612 /* AppDelegate.swift in Sources */,
 				FDD8E38E1C891B90004A5612 /* AzFake.m in Sources */,
 			);

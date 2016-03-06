@@ -10,14 +10,14 @@ import CoreLocation
 
 
 class NewViewController: UIViewController, CLLocationManagerDelegate {
-
+    
     var client : MSClient?
     var photoName : String = ""
     var bufferPhoto : NSData?
     var delegate : NewsTableDelegate? = nil
     
-
-  
+    
+    
     @IBOutlet weak var newsText: UITextView!
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var latitudeLabel: UILabel!
@@ -25,18 +25,18 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var publishSwitch: UISwitch!
     @IBOutlet weak var photo: UIImageView!
     @IBAction func addButton(sender: AnyObject) {
-         captureFotoBlogFromViewController(self, withDelegate: self)
+        captureFotoBlogFromViewController(self, withDelegate: self)
     }
     @IBAction func addNewNews(sender: AnyObject) {
         //Validate values:
         //Save in MS
-
+        
         if isUserLoged(){
             if let usrlogin = loadUserAuth(){
                 
                 client!.currentUser = MSUser(userId: usrlogin.usr)
                 client!.currentUser.mobileServiceAuthenticationToken = usrlogin.tok
-
+                
                 
                 let tabla = client?.tableWithName("news")
                 var publishValue = false
@@ -46,7 +46,7 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
                 
                 
                 tabla?.insert(["title": titleText.text!, "news": newsText.text! , "photo": photoName, "longitud": latitudeLabel.text!, "latitude" : latitudeLabel.text!, "published" : publishValue], completion: { (inserted, error:NSError?) -> Void in
-                //tablaVideos?.insert(["title": titleText.text!], completion: { (inserted, error:NSError? ) -> Void in
+                    //tablaVideos?.insert(["title": titleText.text!], completion: { (inserted, error:NSError? ) -> Void in
                     
                     if error != nil{
                         print ("Error: \(error?.userInfo["NSLocalizedDescription"]!)")
@@ -70,7 +70,7 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
         }else {
             //user not logged:
             client!.loginWithProvider("facebook", controller: self, animated: true, completion: { (user: MSUser?, error: NSError?) -> Void in
-            
+                
                 if (error != nil){
                     print("There is a probelm with user login")
                 } else{
@@ -92,7 +92,7 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
         self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
     }
     
-
+    
     
     func captureFotoBlogFromViewController(ViewController:UIViewController, withDelegate delegate: protocol<UIImagePickerControllerDelegate, UINavigationControllerDelegate>)->Bool{
         if (UIImagePickerController.isSourceTypeAvailable(.Camera)==true){
@@ -154,8 +154,8 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
                     //upload del blob local + NSData
                     blobLocal.uploadFromData( data, completionHandler : {(error : NSError?) -> Void in
                         if error == nil{
-                           /* dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                                self.saveInAzureButton.enabled = false
+                            /* dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            self.saveInAzureButton.enabled = false
                             })*/
                             
                         }else {
@@ -168,9 +168,9 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
         })
     }
     
-  
-  
-
+    
+    
+    
 }
 
 extension NewViewController:UINavigationControllerDelegate{}
@@ -187,8 +187,8 @@ extension NewViewController:UIImagePickerControllerDelegate{
             
             self.locationManager.requestAlwaysAuthorization()
             self.locationManager.startUpdatingLocation()
-                    
-           
+            
+            
         }
         
         self.dismissViewControllerAnimated(true, completion: nil);
@@ -201,3 +201,4 @@ extension NewViewController:UIImagePickerControllerDelegate{
         })
     }
 }
+
