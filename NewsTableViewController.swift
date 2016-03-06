@@ -56,13 +56,18 @@ class NewsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        performSegueWithIdentifier("showDetails", sender:indexPath)
+    }
+    
      func populateModel(){
         let table = client?.tableWithName("news")
         let usrlogin = loadUserAuth()
         let predicate = NSPredicate(format: "userId = '\(usrlogin!.usr)'", [])
         let query = MSQuery(table: table, predicate:predicate)
         query.orderByDescending("__createdAt")
-        query.selectFields = ["title", "photo", "userName"]
+        query.selectFields = ["title", "photo", "userName", "id"]
         query.readWithCompletion{(result:MSQueryResult?, error:NSError?) -> Void in
             if error == nil {
                 self.model = result?.items
@@ -87,8 +92,13 @@ class NewsTableViewController: UITableViewController {
         switch identifier{
         case "addNews":
             let nc = segue.destinationViewController as! NewViewController
-            // desde aqui podemos pasar alguna property
             nc.client = client
+            break
+        case "showDetails":
+            let index = sender as? NSIndexPath
+            let dc = segue.destinationViewController as! DeatailNewsViewController
+            dc.client = client
+            dc.model = model![(index?.row)!]
             break
             
         default: break

@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsTableViewController.swift"
-            timestampString = "478975532.104087"
+            filePath = "Scoops/DeatailNewsViewController.swift"
+            timestampString = "478978220.587566"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "downloadImage(_:imageView:cell:)"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "viewWillAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsTableViewController.swift"
-            timestampString = "478975579.623018"
+            filePath = "Scoops/DeatailNewsViewController.swift"
+            timestampString = "478979231.639465"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "downloadImage(_:imageView:cell:)"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "takeRestData()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,13 +57,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NewsTableViewController.swift"
-            timestampString = "478975989.827285"
+            filePath = "Scoops/DeatailNewsViewController.swift"
+            timestampString = "478979231.639465"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
-            landmarkName = "downloadImage(_:imageView:cell:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "takeRestData()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
