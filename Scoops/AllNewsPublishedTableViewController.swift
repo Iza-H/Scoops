@@ -22,6 +22,8 @@ class AllNewsPublishedTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    //Select only published data
     func populateModel(){
         let table = client?.tableWithName("news")
         let predicate = NSPredicate(format: "published = true", [])
@@ -65,8 +67,6 @@ class AllNewsPublishedTableViewController: UITableViewController {
         if (photoName != ""){
             downloadImage(photoName!, imageView :cell.imageView!, cell: cell)
         }
-        
-        
         return cell
     }
     
@@ -78,7 +78,7 @@ class AllNewsPublishedTableViewController: UITableViewController {
         let containerName = "photos"
         
         
-        //check if saved in dhe caache:
+        //check if saved in dhe cache:
         let cachePath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as String
         let strFilePath = cachePath.stringByAppendingString("/\(blobName)")
         
@@ -112,7 +112,6 @@ class AllNewsPublishedTableViewController: UITableViewController {
                                     
                                     image = UIImage(data : data!)
                                     imageView.image = image
-                                    //cell.setNeedsLayout;
                                     //save it:
                                     let image = UIImage(data: data!)
                                     UIImageJPEGRepresentation(image!, 100)!.writeToFile(strFilePath, atomically: true)
