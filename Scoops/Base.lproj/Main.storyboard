@@ -116,7 +116,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="OAk-vp-vqe">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="OAk-vp-vqe">
                                 <rect key="frame" x="20" y="98" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <animations/>
@@ -222,7 +222,13 @@
                         <animations/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="5eH-Y2-zee"/>
+                    <navigationItem key="navigationItem" id="5eH-Y2-zee">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="347-TM-nHp">
+                            <connections>
+                                <action selector="saveChanges:" destination="cJB-z8-BgE" id="42w-KH-UTo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="authorField" destination="Wb0-Jq-syg" id="NiA-df-Tf3"/>
                         <outlet property="imageView" destination="p90-mA-wXq" id="X4Q-mL-wjv"/>

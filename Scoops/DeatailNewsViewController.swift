@@ -12,6 +12,9 @@ class DeatailNewsViewController: UIViewController {
     
     var model : AnyObject?
     var client : MSClient?
+    var nameFile : String = ""
+    var id : String = ""
+    var delegate : NewsTableDelegate? = nil
     
     @IBOutlet weak var titleField: UITextField!
 
@@ -28,6 +31,58 @@ class DeatailNewsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func saveChanges(sender: AnyObject) {
+        
+        if isUserLoged(){
+            if let usrlogin = loadUserAuth(){
+                
+                client!.currentUser = MSUser(userId: usrlogin.usr)
+                client!.currentUser.mobileServiceAuthenticationToken = usrlogin.tok
+                
+                
+                let tabla = client?.tableWithName("news")
+                var publishValue = false
+                if pushSwitch.on{
+                    publishValue = true
+                }
+                
+                
+                tabla?.update(["id": self.id ,"title": titleField.text!, "news": newsField.text! , "photo": nameFile, "longitud": latitudeLabel.text!, "latitude" : latitudeLabel.text!, "published" : publishValue], completion: { (inserted, error:NSError?) -> Void in
+                    //tablaVideos?.insert(["title": titleText.text!], completion: { (inserted, error:NSError? ) -> Void in
+                    
+                    if error != nil{
+                        print ("Error: \(error?.userInfo["NSLocalizedDescription"]!)")
+                        let alert = UIAlertView(title: "Error",
+                            message: "\(error?.userInfo["NSLocalizedDescription"]!)",
+                            delegate: nil,
+                            cancelButtonTitle: "Ok")
+                        alert.show()
+                    } else {
+                        print( "Register saved in the DB")
+                        self.delegate?.addedNewValues()
+                        
+                        
+                    }
+                    
+                })
+            }
+        }else {
+            //user not logged:
+            client!.loginWithProvider("facebook", controller: self, animated: true, completion: { (user: MSUser?, error: NSError?) -> Void in
+                
+                if (error != nil){
+                    print("There is a probelm with user login")
+                } else{
+                    saveAuthInfo(user)
+                    
+                }
+            })
+        }
+
+        
+        
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,6 +94,7 @@ class DeatailNewsViewController: UIViewController {
         super.viewDidAppear(animated)
         titleField.text = model!["title"] as? String;
         authorField.text = model!["userName"] as? String;
+        self.id = (model!["id"] as? String)!;
         self.indicator.hidden = true
         takeRestData()
     }
@@ -65,8 +121,8 @@ class DeatailNewsViewController: UIViewController {
                         
                         //check if saved in dhe caache:
                         let cachePath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as String
-                        let nameFile = blobName!
-                        let strFilePath = cachePath.stringByAppendingString("/\(nameFile)")
+                        self.nameFile = blobName!
+                        let strFilePath = cachePath.stringByAppendingString("/\(self.nameFile)")
                         
                         let manager = NSFileManager.defaultManager()
                         if (manager.fileExistsAtPath(strFilePath)) {

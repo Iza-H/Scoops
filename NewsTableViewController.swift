@@ -118,6 +118,7 @@ class NewsTableViewController: UITableViewController, NewsTableDelegate {
             let index = sender as? NSIndexPath
             let dc = segue.destinationViewController as! DeatailNewsViewController
             dc.client = client
+            dc.delegate = self
             dc.model = model![(index?.row)!]
             break
             
