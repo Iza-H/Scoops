@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Scoops/NewViewController.swift"
-            timestampString = "478961471.511126"
+            filePath = "NewsTableViewController.swift"
+            timestampString = "478987297.016816"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "uploadToStorage(_:blobName:)"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "downloadImage(_:imageView:cell:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,27 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Scoops/DeatailNewsViewController.swift"
-            timestampString = "478978220.587566"
+            timestampString = "478988474.614173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Scoops/DeatailNewsViewController.swift"
-            timestampString = "478979231.639465"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
             landmarkName = "takeRestData()"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,12 +42,76 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Scoops/DeatailNewsViewController.swift"
-            timestampString = "478979231.639465"
+            timestampString = "478988474.614173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "takeRestData()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Scoops.DeatailNewsViewController.(takeRestData (Scoops.DeatailNewsViewController) -&gt; () -&gt; ()).(closure #1).(closure #1).(closure #1)"
+                  moduleName = "Scoops"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izabela/Desktop/Proyectos/Scoops/Scoops/DeatailNewsViewController.swift"
+                  timestampString = "478988660.144278"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "250">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Scoops.DeatailNewsViewController.(takeRestData (Scoops.DeatailNewsViewController) -&gt; () -&gt; ()).(closure #1).(closure #1).(closure #1).(closure #1)"
+                  moduleName = "Scoops"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/izabela/Desktop/Proyectos/Scoops/Scoops/DeatailNewsViewController.swift"
+                  timestampString = "478988660.144999"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "39">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scoops/DeatailNewsViewController.swift"
+            timestampString = "478988474.614173"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "takeRestData()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewsTableViewController.swift"
+            timestampString = "478987814.763404"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "159"
+            endingLineNumber = "159"
+            landmarkName = "downloadImage(_:imageView:cell:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

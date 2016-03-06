@@ -14,7 +14,9 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
     var client : MSClient?
     var photoName : String = ""
     var bufferPhoto : NSData?
+    var delegate : NewsTableDelegate? = nil
     
+
   
     @IBOutlet weak var newsText: UITextView!
     @IBOutlet weak var titleText: UITextField!
@@ -54,7 +56,8 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
                             cancelButtonTitle: "Ok")
                         alert.show()
                     } else {
-                        print( " Register saved in the DB")
+                        print( "Register saved in the DB")
+                        self.delegate?.addedNewValues()
                         if (self.photoName != ""){
                             self.uploadToStorage(self.bufferPhoto!, blobName: self.photoName)
                         }
@@ -147,13 +150,14 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
                     endPoint += sasURL!
                     let container = AZSCloudBlobContainer ( url: NSURL(string: endPoint)!)
                     let blobLocal = container.blockBlobReferenceFromName(blobName)
-                    
+                    self.delegate?.addedNewValues()
                     //upload del blob local + NSData
                     blobLocal.uploadFromData( data, completionHandler : {(error : NSError?) -> Void in
-                        if error != nil{
+                        if error == nil{
                            /* dispatch_async(dispatch_get_main_queue(), { () -> Void in
                                 self.saveInAzureButton.enabled = false
                             })*/
+                            
                         }else {
                             print("Error")
                         }

@@ -15,6 +15,7 @@ class DeatailNewsViewController: UIViewController {
     
     @IBOutlet weak var titleField: UITextField!
 
+    @IBOutlet weak var indicator: UIActivityIndicatorView!
 
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
@@ -38,6 +39,7 @@ class DeatailNewsViewController: UIViewController {
         super.viewDidAppear(animated)
         titleField.text = model!["title"] as? String;
         authorField.text = model!["userName"] as? String;
+        self.indicator.hidden = true
         takeRestData()
     }
     
@@ -54,7 +56,70 @@ class DeatailNewsViewController: UIViewController {
                     self.longitudeLabel.text = result?.items[0]["longitud"] as? String;
                     self.pushSwitch.setOn((result?.items[0]["published"] as? Bool)!, animated: false);
                     //self.model = result?.items
-                    //self.tableView.reloadData()
+                    
+                    let blobName = result?.items[0]["photo"] as? String;
+                    if (blobName != ""){
+                        self.indicator.hidden=false
+                        self.indicator.startAnimating()
+                         var image : UIImage?
+                        
+                        //check if saved in dhe caache:
+                        let cachePath = NSSearchPathForDirectoriesInDomains(.CachesDirectory, .UserDomainMask, true)[0] as String
+                        let nameFile = blobName!
+                        let strFilePath = cachePath.stringByAppendingString("/\(nameFile)")
+                        
+                        let manager = NSFileManager.defaultManager()
+                        if (manager.fileExistsAtPath(strFilePath)) {
+                            //get it from cache
+                            let data = NSData(contentsOfFile: strFilePath)
+                            image = UIImage(data : data!)
+                            self.imageView.image = image
+                            self.indicator.stopAnimating()
+                            self.indicator.hidden=true
+                        }else{
+                        //Download and save it:
+                        
+                            let containerName = "photos"
+                            self.client?.invokeAPI("urlsastoblobandcontainer",
+                                body: nil,
+                                HTTPMethod: "GET",
+                                parameters: ["photoName" : blobName!, "ContainerName" : containerName],
+                                headers: nil,
+                                completion: { (result : AnyObject?, response : NSHTTPURLResponse?, error: NSError?) -> Void in
+                                    
+                                    if error == nil{
+                                        let sasURL = result!["sasURL"] as? String
+                                        var endPoint = "https://scoopsizabela.blob.core.windows.net"
+                                        endPoint += sasURL!
+                                        let url = NSURL(string: endPoint)!
+                                        let download = dispatch_queue_create(blobName!, nil);
+                                        dispatch_async(download){
+                                            let data = NSData(contentsOfURL:url)
+                                            //var image : UIImage?
+                                            if data != nil{
+                                                dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                                    
+                                                    image = UIImage(data : data!)
+                                                    self.imageView.image = image
+                                                    self.indicator.stopAnimating()
+                                                    self.indicator.hidden=true
+                                                    
+                                                    //save it:
+                                                    let image = UIImage(data: data!)
+                                                    UIImageJPEGRepresentation(image!, 100)!.writeToFile(strFilePath, atomically: true)
+                                                    
+                                    
+                                                    
+                                                })
+                                            }
+                                        }
+                                        
+                                    }
+                                    
+                            })
+                        
+                        }
+                    }
                 }
             }
     }
