@@ -17,34 +17,35 @@ class ViewController: UIViewController {
     )
 
 
-    @IBAction func log(sender: AnyObject) {
+    @IBAction func logUser(sender: AnyObject) {
         if client.currentUser != nil {
             print ("Userlogged")
             
             if let usrlogin = loadUserAuth() {
                 client.currentUser = MSUser (userId : usrlogin.usr)
                 client.currentUser.mobileServiceAuthenticationToken = usrlogin.tok
-                self.showNewsTable()
+                self.showNewsTable(sender)
                 
             }
-           
-
+            
+            
         } else {
             client.loginWithProvider("facebook", controller:self, animated: true, completion: {(user:MSUser?, error:NSError?) -> Void in
                 if error != nil{
                     print("Error")
                 }else {
                     //Si tenemos exito ->"facebook:CADENACONTOKEN
-                    self.showNewsTable()
+                    self.showNewsTable(sender)
                     saveAuthInfo(user);
                     
                 }
                 
             })
-
+            
             
         }
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title="My news"
@@ -57,15 +58,10 @@ class ViewController: UIViewController {
     }
     
     
-    func showNewsTable(){
+    func showNewsTable(sender: AnyObject){
         
-        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        self.performSegueWithIdentifier("showContent", sender:sender)
         
-        //let nc = storyboard.instantiateViewControllerWithIdentifier("NewsStoryboardID") as! UINavigationController;
-        //self.presentViewController(nc, animated: true, completion: nil)
-        
-        self.navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
-    
         
     }
     
@@ -80,15 +76,16 @@ class ViewController: UIViewController {
         }
         
         switch identifier{
-        case "newsTable":
-            let tc = segue.destinationViewController as! NewsTableViewController
+        case "showContent":
+            let nc = segue.destinationViewController as! NewsTableViewController
             // desde aqui podemos pasar alguna property
-            tc.client = client
+            nc.client = client
             break
         
         default: break
             
         }
+    }
 
 
 }

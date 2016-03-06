@@ -8,9 +8,12 @@
 
 import Foundation
 
-func saveAuthInfo (currentUser : MSUser?){    
+func saveAuthInfo (currentUser : MSUser?){
     NSUserDefaults.standardUserDefaults().setObject(currentUser?.userId, forKey: "userId")
     NSUserDefaults.standardUserDefaults().setObject(currentUser?.mobileServiceAuthenticationToken, forKey: "tokenId")
+    
+
+
     
 }
 

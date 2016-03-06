@@ -12,7 +12,8 @@ import CoreLocation
 class NewViewController: UIViewController, CLLocationManagerDelegate {
 
     var client : MSClient?
-    var photoName : String?
+    var photoName : String = ""
+    var bufferPhoto : NSData?
     
   
     @IBOutlet weak var newsText: UITextView!
@@ -30,24 +31,34 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
 
         if isUserLoged(){
             if let usrlogin = loadUserAuth(){
-                client!.currentUser.mobileServiceAuthenticationToken = usrlogin.tok
-                client!.currentUser = MSUser(userId: usrlogin.usr)
-                //client!.currentUser.mobileServiceAuthenticationToken = usrlogin.tok
                 
-                let tablaVideos = client?.tableWithName("news")
+                client!.currentUser = MSUser(userId: usrlogin.usr)
+                client!.currentUser.mobileServiceAuthenticationToken = usrlogin.tok
+
+                
+                let tabla = client?.tableWithName("news")
                 var publishValue = false
                 if publishSwitch.on{
                     publishValue = true
                 }
                 
                 
-                //tablaVideos?.insert(["title": titleText.text, "news": newsText.text , "photo": photoName , "longitud": latitudeLabel.text, "latitude" : latitudeLabel.text,// "published" : publishValue], completion: { (inserted, error:NSError?) -> Void in
-                tablaVideos?.insert(["title": titleText.text!], completion: { (inserted, error:NSError? ) -> Void in
+                tabla?.insert(["title": titleText.text!, "news": newsText.text! , "photo": photoName, "longitud": latitudeLabel.text!, "latitude" : latitudeLabel.text!, "published" : publishValue], completion: { (inserted, error:NSError?) -> Void in
+                //tablaVideos?.insert(["title": titleText.text!], completion: { (inserted, error:NSError? ) -> Void in
                     
                     if error != nil{
-                        print ("Error: \(error)")
+                        print ("Error: \(error?.userInfo["NSLocalizedDescription"]!)")
+                        let alert = UIAlertView(title: "Error",
+                            message: "\(error?.userInfo["NSLocalizedDescription"]!)",
+                            delegate: nil,
+                            cancelButtonTitle: "Ok")
+                        alert.show()
                     } else {
                         print( " Register saved in the DB")
+                        if (self.photoName != ""){
+                            self.uploadToStorage(self.bufferPhoto!, blobName: self.photoName)
+                        }
+                        
                         
                     }
                     
@@ -122,6 +133,37 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
+    
+    func uploadToStorage (data:NSData, blobName: String){
+        client?.invokeAPI("urlsastoblobandcontainer",
+            body:nil,
+            HTTPMethod: "GET",
+            parameters: ["photoName":photoName, "ContainerName" :"photos"],
+            headers : nil,
+            completion:{(result: AnyObject?,response :  NSHTTPURLResponse?, error:NSError?) -> Void in
+                if error == nil {
+                    let sasURL = result!["sasURL"] as? String
+                    var endPoint = "https://scoopsizabela.blob.core.windows.net"
+                    endPoint += sasURL!
+                    let container = AZSCloudBlobContainer ( url: NSURL(string: endPoint)!)
+                    let blobLocal = container.blockBlobReferenceFromName(blobName)
+                    
+                    //upload del blob local + NSData
+                    blobLocal.uploadFromData( data, completionHandler : {(error : NSError?) -> Void in
+                        if error != nil{
+                           /* dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                                self.saveInAzureButton.enabled = false
+                            })*/
+                        }else {
+                            print("Error")
+                        }
+                        
+                    })
+                    
+                }
+        })
+    }
+    
   
   
 
@@ -135,6 +177,7 @@ extension NewViewController:UIImagePickerControllerDelegate{
         if let pickedImage:UIImage = (info[UIImagePickerControllerOriginalImage]) as? UIImage {
             photo.image = pickedImage
             photoName = "photo-\(NSUUID().UUIDString).jpg"
+            bufferPhoto = UIImageJPEGRepresentation(pickedImage, 0.8)
             //let selectorToCall = Selector("imageWasSavedSuccessfully:didFinishSavingWithError:context:")
             //UIImageWriteToSavedPhotosAlbum(pickedImage, self, selectorToCall, nil)
             
