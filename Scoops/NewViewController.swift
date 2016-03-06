@@ -138,7 +138,7 @@ class NewViewController: UIViewController, CLLocationManagerDelegate {
         client?.invokeAPI("urlsastoblobandcontainer",
             body:nil,
             HTTPMethod: "GET",
-            parameters: ["photoName":photoName, "ContainerName" :"photos"],
+            parameters: ["photoName":"", "ContainerName" :"photos"],
             headers : nil,
             completion:{(result: AnyObject?,response :  NSHTTPURLResponse?, error:NSError?) -> Void in
                 if error == nil {
