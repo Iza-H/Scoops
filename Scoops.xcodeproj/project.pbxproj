@@ -12,6 +12,7 @@
 		FDA2C8F91C8C99E800A62611 /* DeatailNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA2C8F81C8C99E800A62611 /* DeatailNewsViewController.swift */; };
 		FDA2C8FB1C8CCED700A62611 /* AllNewsPublishedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA2C8FA1C8CCED700A62611 /* AllNewsPublishedTableViewController.swift */; };
 		FDA2C8FF1C8CD94300A62611 /* NewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA2C8FE1C8CD94300A62611 /* NewViewController.swift */; };
+		FDA2C9011C8CDB5F00A62611 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA2C9001C8CDB5F00A62611 /* NewsTableViewController.swift */; };
 		FDD8E3781C8916F2004A5612 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E3771C8916F2004A5612 /* AppDelegate.swift */; };
 		FDD8E37A1C8916F2004A5612 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E3791C8916F2004A5612 /* ViewController.swift */; };
 		FDD8E37D1C8916F3004A5612 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDD8E37B1C8916F3004A5612 /* Main.storyboard */; };
@@ -20,7 +21,6 @@
 		FDD8E38A1C891B3C004A5612 /* Azure Storage Client Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD8E3891C891B3C004A5612 /* Azure Storage Client Library.framework */; };
 		FDD8E38E1C891B90004A5612 /* AzFake.m in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E38D1C891B90004A5612 /* AzFake.m */; };
 		FDD8E3901C891BB8004A5612 /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD8E38F1C891BB8004A5612 /* libxml2.2.tbd */; };
-		FDD8E3971C891E9A004A5612 /* NewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E3961C891E9A004A5612 /* NewsTableViewController.swift */; };
 		FDD8E3991C8A146D004A5612 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDD8E3981C8A146D004A5612 /* Utils.swift */; };
 		FDD8E39D1C8A1FAB004A5612 /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDD8E39C1C8A1FAB004A5612 /* WindowsAzureMobileServices.framework */; };
 /* End PBXBuildFile section */
@@ -31,6 +31,7 @@
 		FDA2C8F81C8C99E800A62611 /* DeatailNewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeatailNewsViewController.swift; sourceTree = "<group>"; };
 		FDA2C8FA1C8CCED700A62611 /* AllNewsPublishedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllNewsPublishedTableViewController.swift; sourceTree = "<group>"; };
 		FDA2C8FE1C8CD94300A62611 /* NewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewViewController.swift; sourceTree = "<group>"; };
+		FDA2C9001C8CDB5F00A62611 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsTableViewController.swift; sourceTree = "<group>"; };
 		FDD8E3741C8916F2004A5612 /* Scoops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scoops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDD8E3771C8916F2004A5612 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FDD8E3791C8916F2004A5612 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		FDD8E38C1C891B90004A5612 /* AzFake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AzFake.h; sourceTree = "<group>"; };
 		FDD8E38D1C891B90004A5612 /* AzFake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AzFake.m; sourceTree = "<group>"; };
 		FDD8E38F1C891BB8004A5612 /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
-		FDD8E3961C891E9A004A5612 /* NewsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NewsTableViewController.swift; path = ../NewsTableViewController.swift; sourceTree = "<group>"; };
 		FDD8E3981C8A146D004A5612 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		FDD8E39C1C8A1FAB004A5612 /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,7 +85,7 @@
 		FDD8E3761C8916F2004A5612 /* Scoops */ = {
 			isa = PBXGroup;
 			children = (
-				FDD8E3961C891E9A004A5612 /* NewsTableViewController.swift */,
+				FDA2C9001C8CDB5F00A62611 /* NewsTableViewController.swift */,
 				FDD8E3771C8916F2004A5612 /* AppDelegate.swift */,
 				FDA2C8F81C8C99E800A62611 /* DeatailNewsViewController.swift */,
 				FDD8E3791C8916F2004A5612 /* ViewController.swift */,
@@ -181,10 +181,10 @@
 				FDA2C8FB1C8CCED700A62611 /* AllNewsPublishedTableViewController.swift in Sources */,
 				FDD8E3991C8A146D004A5612 /* Utils.swift in Sources */,
 				FDA2C8FF1C8CD94300A62611 /* NewViewController.swift in Sources */,
-				FDD8E3971C891E9A004A5612 /* NewsTableViewController.swift in Sources */,
 				FDD8E37A1C8916F2004A5612 /* ViewController.swift in Sources */,
 				FDD8E3781C8916F2004A5612 /* AppDelegate.swift in Sources */,
 				FDD8E38E1C891B90004A5612 /* AzFake.m in Sources */,
+				FDA2C9011C8CDB5F00A62611 /* NewsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
