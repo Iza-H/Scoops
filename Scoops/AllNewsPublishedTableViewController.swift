@@ -1,40 +1,49 @@
 //
-//  NewsTableViewController.swift
+//  AllNewsPublishedTableViewController.swift
 //  Scoops
 //
-//  Created by Izabela on 4/3/16.
+//  Created by Izabela on 06/03/16.
 //  Copyright © 2016 Izabela. All rights reserved.
 //
 
+import UIKit
 
-
-class NewsTableViewController: UITableViewController, NewsTableDelegate {
+class AllNewsPublishedTableViewController: UITableViewController {
     var client : MSClient?
     var model : [AnyObject]?
-    
-    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        populateModel()
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        populateModel()
+    func populateModel(){
+        let table = client?.tableWithName("news")
+        let predicate = NSPredicate(format: "published = true", [])
+        let query = MSQuery(table: table, predicate:predicate)
+        query.orderByDescending("__createdAt")
+        query.selectFields = ["title", "photo", "userName", "id"]
+        query.readWithCompletion{(result:MSQueryResult?, error:NSError?) -> Void in
+            if error == nil {
+                self.model = result?.items
+                self.tableView.reloadData()
+            }
+        }
         
     }
-    
 
-    
-    
-    
     // MARK: - Table view data source
+
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
+        // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
+
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         var rows = 0
@@ -45,9 +54,10 @@ class NewsTableViewController: UITableViewController, NewsTableDelegate {
         
     }
     
+
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("news", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("newsAll", forIndexPath: indexPath)
         cell.textLabel?.text = model![indexPath.row]["title"]as? String
         cell.detailTextLabel?.text = model![indexPath.row]["userName"]as? String
         cell.imageView!.image = UIImage(named: "img_not_avalaible.png")
@@ -55,70 +65,11 @@ class NewsTableViewController: UITableViewController, NewsTableDelegate {
         if (photoName != ""){
             downloadImage(photoName!, imageView :cell.imageView!, cell: cell)
         }
-
+        
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        performSegueWithIdentifier("showDetails", sender:indexPath)
-    }
-    
-     func populateModel(){
-        let table = client?.tableWithName("news")
-        let usrlogin = loadUserAuth()
-        let predicate = NSPredicate(format: "userId = '\(usrlogin!.usr)'", [])
-        let query = MSQuery(table: table, predicate:predicate)
-        query.orderByDescending("__createdAt")
-        query.selectFields = ["title", "photo", "userName", "id"]
-        query.readWithCompletion{(result:MSQueryResult?, error:NSError?) -> Void in
-            if error == nil {
-                self.model = result?.items
-                self.tableView.reloadData()
-            }
-        }
-      
-     }
-    
-    
-    
-    
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-        
-        guard let identifier = segue.identifier else{
-            print("We do not have id")
-            return
-        }
-        
-        switch identifier{
-        case "addNews":
-            let nc = segue.destinationViewController as! NewViewController
-            nc.client = client
-            nc.delegate = self
-            break
-        case "showDetails":
-            let index = sender as? NSIndexPath
-            let dc = segue.destinationViewController as! DeatailNewsViewController
-            dc.client = client
-            dc.delegate = self
-            dc.model = model![(index?.row)!]
-            break
-        case "allNewsTable":
-            let ac = segue.destinationViewController as! AllNewsPublishedTableViewController
-            ac.client = client
-            break
-            
-        default: break
-            
-        }
-    }
-    
-   
     
     func downloadImage(photoName: String, imageView :UIImageView, cell: AnyObject){
         
@@ -137,7 +88,7 @@ class NewsTableViewController: UITableViewController, NewsTableDelegate {
             let data = NSData(contentsOfFile: strFilePath)
             image = UIImage(data : data!)
             imageView.image = image
-
+            
         }else{
             
             self.client?.invokeAPI("urlsastoblobandcontainer",
@@ -165,7 +116,7 @@ class NewsTableViewController: UITableViewController, NewsTableDelegate {
                                     //save it:
                                     let image = UIImage(data: data!)
                                     UIImageJPEGRepresentation(image!, 100)!.writeToFile(strFilePath, atomically: true)
-
+                                    
                                     
                                 })
                             }
@@ -174,29 +125,17 @@ class NewsTableViewController: UITableViewController, NewsTableDelegate {
                     }
                     
             })
-
-
-        
-    
+            
+            
+            
+            
             
         }
         
-
-
+        
+        
         //}
         
-        }
-    
-    func addedNewValues(){
-        populateModel()
     }
-    
 
-
-
-}
-
-protocol NewsTableDelegate
-{
-    func addedNewValues()
 }

@@ -93,7 +93,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My news" id="Ndd-zh-0DW">
-                        <barButtonItem key="leftBarButtonItem" title="All news" id="2Mk-Yq-YUI"/>
+                        <barButtonItem key="leftBarButtonItem" title="All news" id="2Mk-Yq-YUI">
+                            <connections>
+                                <segue destination="s7A-Ru-90C" kind="push" identifier="allNewsTable" id="PaT-3x-AiT"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2Xq-Ta-8yH">
                             <connections>
                                 <segue destination="ytF-5r-GwL" kind="push" identifier="addNews" id="I8Z-ua-s5f"/>
@@ -107,6 +111,61 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4dv-iu-fz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1816" y="-529"/>
+        </scene>
+        <!--All News Published Table View Controller-->
+        <scene sceneID="Sz0-mA-1rH">
+            <objects>
+                <tableViewController id="s7A-Ru-90C" customClass="AllNewsPublishedTableViewController" customModule="Scoops" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="newsAll" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IEz-K5-8e1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="newsAll" selectionStyle="default" indentationWidth="10" reuseIdentifier="newsAll" textLabel="MNb-UG-pI6" detailTextLabel="muW-Jc-Qts" imageView="zc6-L7-VHB" style="IBUITableViewCellStyleSubtitle" id="Dn8-kv-IJt">
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Dn8-kv-IJt" id="7vE-UY-ks2">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MNb-UG-pI6">
+                                            <rect key="frame" x="87" y="5" width="32" height="20"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="muW-Jc-Qts">
+                                            <rect key="frame" x="87" y="25" width="41" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="img_not_avalaible.png" id="zc6-L7-VHB">
+                                            <rect key="frame" x="15" y="0.0" width="57" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </imageView>
+                                    </subviews>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="s7A-Ru-90C" id="lkA-9D-3xd"/>
+                            <outlet property="delegate" destination="s7A-Ru-90C" id="dkB-op-XDZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="NOv-OZ-5iQ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b2P-lS-laA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2148" y="-1342"/>
         </scene>
         <!--Deatail News View Controller-->
         <scene sceneID="V1m-AU-HNq">
@@ -367,7 +426,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yg9-ee-iLn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2395" y="47"/>
+            <point key="canvasLocation" x="2278" y="159"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qXf-NK-JLF">
